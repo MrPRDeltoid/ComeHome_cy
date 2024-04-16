@@ -1,0 +1,14 @@
+{
+    "valid_user": {
+        "email": "pcmanton@gmail.com",
+        "password": "Pcmgz))1312"
+    },
+    "invalid_user": {
+        "email": "not_subscribed@gmail.com",
+        "password": "Password123"
+    },
+    "invalid_email": {
+        "email": "invalid_email",
+        "password": "Password123"
+    }
+}
