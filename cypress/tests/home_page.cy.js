@@ -63,7 +63,7 @@ describe('The Home Page', () => {
       .and('have.attr', 'href', '/homeowner')
   })
 
-  it('Shows correct content in the find and agent section', () => {
+  it('Shows correct content in the find an agent section', () => {
     home_page.findAgentTitle().should('have.text', "Need help finding an agent? We'll connect you.")
     home_page.findAgentDescription()
       .should('have.text', "We can help pair you with the right agent for your real estate needs. Let our team help make locating the best agent easy and smooth.")

@@ -11,8 +11,6 @@ describe('The Main Header', () => {
     home_page.visit()
   })
 
-  
-
   it('Has correct main header elements', () => {
     // Check header has correct elements
     home_page.mainHeader().within(() =>{

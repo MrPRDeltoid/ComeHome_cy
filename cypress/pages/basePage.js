@@ -33,7 +33,6 @@ export class JoinLoginDialog {
   loginLink() {return cy.get('[data-event-name="click_login_cta"]')}
   signupRow() {return cy.getBySel("sign-up-row")}
   signupLink() {return cy.get('[data-event-name="click_signup_cta"]')}
-  loginButton() {return cy.get('[data-hc-name="log-in-row"] > button')}
   firstNameField() {return cy.get('[name="firstname"]')}
   lastNameField() {return cy.get('[name="lastname"]')}
   emailField() {return cy.get('[name="email"]')}
