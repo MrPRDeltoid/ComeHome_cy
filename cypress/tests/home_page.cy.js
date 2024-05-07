@@ -12,7 +12,6 @@ describe('The Home Page', () => {
   })
 
   it('Has correct sections', () => {
-    // Check major page sections are present
     home_page.mainHeader().should('exist')
     home_page.topSection().should('exist')
     home_page.photoSection().should('exist')
@@ -21,8 +20,8 @@ describe('The Home Page', () => {
     home_page.footerSection().should('exist')
   })
 
-  it('Has correct header and subheader text', () => {
-    // Check correct header and subjeader text
+  it('Has correct title, header and subheader text', () => {
+    cy.title().should('eq', "Home | ComeHome")
     home_page.header().should('have.text', "Find your dream home")
     home_page.subheader().should('have.text', "Search homes in your neighborhood and find a house that's right for you.")
   })

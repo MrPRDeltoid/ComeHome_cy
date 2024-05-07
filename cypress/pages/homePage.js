@@ -17,7 +17,7 @@ export class HomePage extends BasePage {
   searchButton() {return cy.get('button[class$="HomeSubpageSearch__SearchButton"]')}
   // Photo section
   photoColumn() {return cy.get('class$="__PhotoColumn"]')}
-  photo() {return cy.get('[class$="__PhotoColumnPhoto"]')}
+  photos() {return cy.get('[class$="__PhotoColumnPhoto"]')}
   // Track or buy home section
   buyHomeTitle() {return cy.getBySel("buy-home-modal-header")}
   buyHomeDescription() {return cy.getBySel("buy-home-modal-description")}
