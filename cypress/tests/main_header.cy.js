@@ -19,7 +19,7 @@ describe('The Main Header', () => {
     // Check header has correct elements
     home_page.mainHeader().within(() =>{
       main_header.logo().should('exist')
-    })
+    })  // TODO: Update to visual test
     main_header.buyHomeButton().should('contain.text', "Find a home")
     main_header.myHomeButton().should('contain.text', "My home")
     main_header.savedButton().should('contain.text', "Saved")
@@ -35,7 +35,28 @@ describe('The Main Header Options', () => {
   it('Can click Find a home to show correct page', () => {
     main_header.buyHomeButton().click()
     cy.title().should('eq', "Real estate and homes for sale | ComeHome")
-
-
+    find_home_page.mainHeader().should('exist')  // TODO: Update to visual test
+    find_home_page.searchBar().should('exist')  // TODO: Update to visual test
+    find_home_page.mapSection().should('exist')
+    find_home_page.cardSection().should('exist')
   })
+
+  /*
+  it('Can click My home to show correct page', () => {
+  
+  })
+
+  it('Can click Saved to show correct page', () => {
+  
+  })
+
+  it('Can click Alerts to show correct page', () => {
+  
+  })
+
+  it('Can click Find an agent to show correct page', () => {
+  
+  })
+
+  */
 })

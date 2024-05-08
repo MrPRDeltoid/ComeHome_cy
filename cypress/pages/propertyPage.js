@@ -12,7 +12,7 @@ export class PropertyPage extends BasePage {
 }
 
 export class PublicView extends PropertyPage {
-  // Elements specific to public view
+  // Elements and methods specific to public view
   photoSection() {return cy.getBySel("carousel-section")}
   introSection() {return cy.getBySel("property-intro-section")}
   introSectionAddress() {return cy.get('.PropertyIntro__Address')}
@@ -27,7 +27,7 @@ export class PublicView extends PropertyPage {
 }
 
 export class OwnerView extends PropertyPage{
-  // Elements specific to owner view
+  // Elements and methods specific to owner view
   avmSection() {return cy.getBySel("avm-section")}
   brokerageSection() {return cy.get('class$="__BrokerageAttribution"]')}
   yourHomeSection() {return cy.getBySel("ho-dashboard-section-your_home")}

@@ -13,6 +13,12 @@ describe('The Signup/Login Dialog', () => {
     // Click the Join or Login Button
     main_header.showJoinLoginDialog()
   })
+
+  afterEach(() => {
+    // Close the dialog
+    join_login_dialog.closeDialog()
+    main_header.joinLoginDialog().should('not.exist')
+  })
     
   it('Has correct elements on signup form', () => {
     // Check signup form has correct elements
@@ -22,26 +28,25 @@ describe('The Signup/Login Dialog', () => {
     join_login_dialog.firstNameField().should('exist')
     join_login_dialog.lastNameField().should('exist')
     join_login_dialog.emailField().should('exist')
+    join_login_dialog.phoneField().should('exist')
+    join_login_dialog.passwordField().should('exist')
     join_login_dialog.confirmRow().should('have.text', "Terms of Service AgreementBy registering, I agree to ComeHome\u00a0Terms of Use\u00a0and\u00a0Privacy Policy")
     join_login_dialog.signupButton().should('have.text', "Sign Up")
-    // Click close button to close dialog
-    join_login_dialog.closeDialog()
-    main_header.joinLoginDialog().should('not.exist')
   })
 
   it('Has correct elements on login form', () => {
     // Check login form has correct elements
     join_login_dialog.loginLink().click()
+    join_login_dialog.closeButton().should('exist')
     join_login_dialog.title().should('have.text', "Welcome")
     join_login_dialog.subTitle().should('have.text', "Please log in to your account")
     join_login_dialog.signupRow().should('have.text', "Don't have an account?\u00a0Sign up")
     join_login_dialog.firstNameField().should('not.exist')
     join_login_dialog.lastNameField().should('not.exist')
     join_login_dialog.emailField().should('exist')
+    join_login_dialog.phoneField().should('not.exist')
+    join_login_dialog.passwordField().should('exist')
     join_login_dialog.confirmRow().should('not.exist')
     join_login_dialog.loginButton().should('have.text', "Log In")
-    // Click close button to close dialog
-    join_login_dialog.closeDialog()
-    main_header.joinLoginDialog().should('not.exist')
   })
 })

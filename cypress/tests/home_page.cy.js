@@ -11,7 +11,7 @@ describe('The Home Page', () => {
     home_page.visit()
   })
 
-  it('Has correct sections', () => {
+  it('Has correct sections', () => {  // TODO: Update with visual tests
     home_page.mainHeader().should('exist')
     home_page.topSection().should('exist')
     home_page.photoSection().should('exist')
