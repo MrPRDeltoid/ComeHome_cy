@@ -83,7 +83,7 @@ describe('The My Home search view', () => {
     cy.url().should('contain', 'homeowner')
     cy.title().should('contain', property_data['street'])
     // Verify AVM section address and details
-    owner_view.avmSectionAddress().should('have.text', property_data['street'])
+    owner_view.avmSectionAddress().find('h1').should('have.text', property_data['street'])
     owner_view.avmSectionDetails().should('have.text', `${property_data['beds']} Bed|${property_data['baths']} Bath|${property_data['gla'].replace(',', '')} Sq Ft.`)
     })
 })
