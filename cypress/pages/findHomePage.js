@@ -11,5 +11,4 @@ export class FindHomePage extends BasePage {
   gotoFindHomePage() {
     cy.visit("/search")
   }
-
 }

@@ -5,8 +5,10 @@ import { HomePage } from "../pages/homePage"
 const main_header = new MainHeader
 const join_login_dialog = new JoinLoginDialog
 const home_page = new HomePage
+
 describe('The Signup/Login Dialog', () => {
   // Basic tests for signup login dialog
+
   beforeEach(() => {
     // Load the landing page
     home_page.visit()

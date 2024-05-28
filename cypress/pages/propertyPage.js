@@ -29,6 +29,8 @@ export class PublicView extends PropertyPage {
 export class OwnerView extends PropertyPage{
   // Elements and methods specific to owner view
   avmSection() {return cy.getBySel("avm-section")}
+  avmSectionAddress() {return cy.get('[data-hc-name="avm-address"] > h1')}
+  avmSectionDetails() {return cy.getBySel("avm-property-details")}
   brokerageSection() {return cy.get('class$="__BrokerageAttribution"]')}
   yourHomeSection() {return cy.getBySel("ho-dashboard-section-your_home")}
   yourNeighborhoodSection() {return cy.getBySel("ho-dashboard-section-your_neighborhood")}
