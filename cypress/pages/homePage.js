@@ -26,6 +26,7 @@ export class HomePage extends BasePage {
   yourHomeDescription() {return cy.getBySel("your-home-dash-modal-description")}
   seeMyHomeButton() {return cy.getBySel("your-home-dash-modal-button")}
   // Find agent section
+  findAgentImage() {return cy.get('.HomeSubpageYourTeamAgent__FindAnAgentImage')}
   findAgentTitle() {return cy.get('.HomeSubpageYourTeamAgent__CardHeader')}
   findAgentDescription() {return cy.get('.HomeSubpageYourTeamAgent__CardDescription')}
   findAgentButton() {return cy.getBySel("find-an-agent-cta")}

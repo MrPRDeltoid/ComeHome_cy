@@ -44,7 +44,6 @@ describe('The Main Header Options', () => {
     main_header.buyHomeButton().click()
     cy.url().should('eq', `${Cypress.config('baseUrl')}search`)
     cy.title().should('eq', "Real estate and homes for sale | ComeHome")
-    search_page.mainHeader().should('exist')
     search_page.mainHeader().should('exist')  // TODO: Update to visual test
     search_page.searchBar().should('exist')  // TODO: Update to visual test
     search_page.mapSection().should('exist')

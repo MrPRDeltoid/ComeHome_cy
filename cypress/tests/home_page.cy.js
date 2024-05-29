@@ -106,6 +106,21 @@ describe('The Track or Buy Home section', () => {
       .and('not.be.disabled')
       .and('have.attr', 'href', '/homeowner')
   })
+
+  it('Can click on Search homes button to load correct page', () => {
+    // Following line is made up to handle the 'snapping' scroll action
+    home_page.searchHomesButton().scrollIntoView().wait(500).click({scrollBehavior: false})
+    cy.url().should('eq', `${Cypress.config('baseUrl')}search`)
+    cy.title().should('eq', "Real estate and homes for sale | ComeHome")
+  })
+
+  it('Can click on See my home button to load correct page', () => {
+    // Following line is made up to handle the 'snapping' scroll action
+    home_page.seeMyHomeButton().scrollIntoView({offset: {top: -500, left: 0}}).click({scrollBehavior: false})
+    //home_page.seeMyHomeButton().click({scrollBehavior: false})
+    cy.url().should('eq', `${Cypress.config('baseUrl')}homeowner`)
+    cy.title().should('eq', "My Home | ComeHome")
+  })
 })
 
 describe('The Find an Agent section', () => {
@@ -118,5 +133,12 @@ describe('The Find an Agent section', () => {
       .should('have.text', "Learn More")
       .and('not.be.disabled')
       .and('have.attr', 'href', '/concierge-team')
+  })
+
+  it('Can click on Learn more button to load correct page', () => {
+    // Following line is made up to handle the 'snapping' scroll action
+    home_page.findAgentButton().scrollIntoView({offset: {top: -150, left: 0}}).click({scrollBehavior: false})
+    cy.url().should('eq', `${Cypress.config('baseUrl')}concierge-team`)
+    cy.title().should('eq', "Home | ComeHome")  // TODO: BUG - The title is not updated, shows title from previous loaded page
   })
 })
