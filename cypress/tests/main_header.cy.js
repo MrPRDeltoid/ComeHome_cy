@@ -23,7 +23,7 @@ beforeEach(() => {
 describe('The Main Header', () => {
   // Tests for the main top header
 
-  it('Has correct main header elements', () => {
+  it('Has correct elements', () => {
     // Check header has correct elements
     home_page.mainHeader().within(() =>{
       main_header.logo().should('exist')
@@ -58,7 +58,7 @@ describe('The Main Header Options', () => {
     cy.title().should('eq', "My Home | ComeHome")
     homeowner_page.mainHeader().should('exist')
     homeowner_page.header().should('have.text', "Access your home value and market insights for free")
-    homeowner_page.searchField().find('input').should('exist').and('have.attr', 'placeholder', "Enter your home address")
+    homeowner_page.searchField().find('input').should('have.attr', 'placeholder', "Enter your home address")
     homeowner_page.loginRow().should('have.text', "Claimed your home already?\u00a0Log in")
     homeowner_page.bottomText().should('have.text', "Claim your home to access tools to…")
     homeowner_page.infoCard().should('exist')  // TODO: Update to visial test
@@ -95,7 +95,7 @@ describe('The Main Header Options', () => {
     alerts_page.mainHeader().should('exist')
     alerts_page.header().should('have.text', "Alerts")
     alerts_page.subheader().should('have.text', "Find out what's new with your saved homes")
-    alerts_page.colorBar().should('exist')
+    alerts_page.colorBar().should('have.attr', 'style')
     alerts_page.manageLink().should('have.text', "Manage Alerts")
     alerts_page.alertsIcon().should('exist')  // TODO: Update to visual test
     alerts_page.loggedOutSection().find('h1').should('have.text', "Activate Alerts")

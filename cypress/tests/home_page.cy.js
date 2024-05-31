@@ -35,7 +35,7 @@ describe('The Find Home search view', () => {
     home_page.header().should('have.text', "Find your dream home")
     home_page.subheader().should('have.text', "Search homes in your neighborhood and find a house that's right for you.")
     home_page.findHomeButton().should('have.text', "Find a home")
-    home_page.searchField().should('exist').and('have.attr', 'placeholder', "Search for a city, ZIP code or address")
+    home_page.searchField().should('have.attr', 'placeholder', "Search for a city, ZIP code or address")
     home_page.searchButton().should('exist')
   })
 
@@ -72,7 +72,7 @@ describe('The My Home search view', () => {
     home_page.header().should('have.text', "See your home's full potential")
     home_page.subheader().should('have.text', "Claim your home and unlock features to see your home's value, equity, and more.")
     home_page.trackHomeButton().should('have.text', "My home value")
-    home_page.searchField().should('exist').and('have.attr', 'placeholder', "Enter your home address")
+    home_page.searchField().should('have.attr', 'placeholder', "Enter your home address")
     home_page.searchButton().should('exist')
   })
 
@@ -117,7 +117,6 @@ describe('The Track or Buy Home section', () => {
   it('Can click on See my home button to load correct page', () => {
     // Following line is made up to handle the 'snapping' scroll action
     home_page.seeMyHomeButton().scrollIntoView({offset: {top: -500, left: 0}}).click({scrollBehavior: false})
-    //home_page.seeMyHomeButton().click({scrollBehavior: false})
     cy.url().should('eq', `${Cypress.config('baseUrl')}homeowner`)
     cy.title().should('eq', "My Home | ComeHome")
   })

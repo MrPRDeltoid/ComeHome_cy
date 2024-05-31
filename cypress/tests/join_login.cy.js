@@ -33,7 +33,7 @@ describe('The Signup/Login Dialog', () => {
     join_login_dialog.phoneField().should('exist')
     join_login_dialog.passwordField().should('exist')
     join_login_dialog.confirmRow().should('have.text', "Terms of Service AgreementBy registering, I agree to ComeHome\u00a0Terms of Use\u00a0and\u00a0Privacy Policy")
-    join_login_dialog.signupButton().should('have.text', "Sign Up")
+    join_login_dialog.signupButton().should('have.text', "Sign Up").and('not.be.enabled')
   })
 
   it('Has correct elements on login form', () => {
@@ -49,6 +49,6 @@ describe('The Signup/Login Dialog', () => {
     join_login_dialog.phoneField().should('not.exist')
     join_login_dialog.passwordField().should('exist')
     join_login_dialog.confirmRow().should('not.exist')
-    join_login_dialog.loginButton().should('have.text', "Log In")
+    join_login_dialog.loginButton().should('have.text', "Log In").and('not.be.enabled')
   })
 })
