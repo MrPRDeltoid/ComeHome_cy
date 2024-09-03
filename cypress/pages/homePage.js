@@ -2,6 +2,8 @@ import { BasePage } from "./basePage"
 
 
 export class HomePage extends BasePage {
+  TITLE = "Home | ComeHome"
+
   // Main page sections
   topSection() {return cy.get('[class$="__TopSection"]')}
   photoSection() {return cy.get('[class$="__PhotoSection"]')}

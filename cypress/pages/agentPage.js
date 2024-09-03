@@ -2,6 +2,9 @@ import { BasePage } from "./basePage"
 
 
 export class AgentPage extends BasePage {
+  URL = `${Cypress.config('baseUrl')}concierge-team`
+  TITLE = "Agents | ComeHome"
+
   // Agent Page elements
   header() {return cy.getBySel("top-module-header-text")}
   subheader() {return cy.getBySel("top-module-sub-header-text")}
@@ -14,7 +17,7 @@ export class AgentPage extends BasePage {
   secondaryImage() {return cy.get('.ConciergeTeamPage__SubModuleImage')}
 
   // Methods
-  gotoAgentPage() {
+  goto() {
     cy.visit("/concierge-team")
   }
 }

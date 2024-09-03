@@ -3,6 +3,7 @@
 export class BasePage {
   // Common elements accross the app
   mainHeader() {return cy.getBySel("top-section")}
+  brokerageSection() {return cy.get(".BrokerageAttribution__BrokerageAttribution")}
   footerSection() {return cy.getBySel("footer-section")}
 }
 
@@ -21,6 +22,13 @@ export class MainHeader {
   showJoinLoginDialog() {
     this.joinLoginLink().click()
   }
+}
+
+export class BrokerageSection {
+  // HC Brokerage Attribution
+  logo() {return cy.getBySel("comehome-logo")}
+  contactLink() {return cy.get(".BrokerageAttribution__Link")}
+  text() {return cy.get(".BrokerageAttribution__BrokerageSection")}
 }
 
 export class JoinLoginDialog {

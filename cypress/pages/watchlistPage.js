@@ -2,6 +2,9 @@ import { BasePage } from "./basePage"
 
 
 export class WatchlistPage extends BasePage {
+  URL = `${Cypress.config('baseUrl')}watchlist`
+  TITLE = "Saved Homes | ComeHome"
+
   // Watchlist Page elements
   savedHomesButton() {return cy.getBySel("saved-homes-button")}
   savedSearchesButton() {return cy.getBySel("saved-searches-button")}
@@ -17,7 +20,7 @@ export class WatchlistPage extends BasePage {
   loginButton() {return cy.getBySel("login-button")}
 
   // Methods
-  gotoWatchlistPage() {
+  goto() {
     cy.visit("/watchlist")
   }
 }

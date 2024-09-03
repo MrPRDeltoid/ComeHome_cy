@@ -2,6 +2,9 @@ import { BasePage } from "./basePage"
 
 
 export class AlertsPage extends BasePage {
+  URL = `${Cypress.config('baseUrl')}alerts`
+  TITLE = "Alerts | ComeHome"
+
   // Alerts Page elements
   header() {return cy.get('.AlertsHeader__AlertTitle')}
   subheader() {return cy.get('.AlertsHeader__AlertSubTitle')}
@@ -16,7 +19,7 @@ export class AlertsPage extends BasePage {
   loginButton() {return cy.getBySel("login-button")}
 
   // Methods
-  gotoAlertsPage() {
+  goto() {
     cy.visit("/alerts")
   }
 }

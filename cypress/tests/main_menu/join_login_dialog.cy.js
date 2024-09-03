@@ -1,5 +1,5 @@
-import { MainHeader, JoinLoginDialog } from "../pages/basePage"
-import { HomePage } from "../pages/homePage"
+import { MainHeader, JoinLoginDialog } from "../../pages/basePage"
+import { HomePage } from "../../pages/homePage"
 
 
 const main_header = new MainHeader
