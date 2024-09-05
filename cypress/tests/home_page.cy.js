@@ -54,7 +54,7 @@ describe('The Find Home search view', () => {
     // Verify breadcrumb section
     const breadcrumb_exp = ["Home", `${property_data['city']}, ${property_data['state']}`, property_data['zip'], property_data['street']]
     public_view.breadcrumbsSection().find('li').each(($el, index) => {
-      expect($el.text()).to.equal(breadcrumb_exp[index])
+      cy.wrap($el).should('have.text', breadcrumb_exp[index])
     })
     // Verify state of view buttons
     public_view.publicViewButton().should('have.attr', 'data-state', 'active')

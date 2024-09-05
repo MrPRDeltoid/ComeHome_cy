@@ -21,7 +21,7 @@ describe('The Agent Page', () => {
                               'Guidance throughout the homeownership journey', 
                               'Assistance with contracts & negotiations']
     agent_page.descriptionText().each(($el, index) => {
-      expect($el.text()).to.equal(descriptions_exp[index])
+      cy.wrap($el).should('have.text', descriptions_exp[index])
     })
     agent_page.secondaryHeader().should('have.text', "Buying, selling or both? Get paired with a top local expert.")
     agent_page.secondarySubheader().should('have.text', "With our experience and your individual needs, we’ll help connect you with the right agent to guide you through your transaction.")
