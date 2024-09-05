@@ -17,10 +17,10 @@ export class PublicView extends PropertyPage {
   introSection() {return cy.getBySel("property-intro-section")}
   introSectionAddress() {return cy.get('.PropertyIntro__Address')}
   introSectionDetails() {return cy.getBySel("property-info")}
-  propertyDetailsSection() {return cy.get('[class$="__AdditionalHomeDetails"]')}
+  propertyDetailsSection() {return cy.get('[class$=__AdditionalHomeDetails]')}
   summaryOptionsPanel() {return cy.getBySel("summary-options-panel")}
   upsellSection() {return cy.getBySel("upsell-section")}
-  mapViewSection() {return cy.get('section[class^="MapPropertyPage__MapPropertyPage"]')}
+  mapViewSection() {return cy.get('section[class^=MapPropertyPage__MapPropertyPage]')}
   
   //Methods
 
@@ -31,7 +31,7 @@ export class OwnerView extends PropertyPage{
   avmSection() {return cy.getBySel("avm-section")}
   avmSectionAddress() {return cy.getBySel("avm-address")}
   avmSectionDetails() {return cy.getBySel("avm-property-details")}
-  brokerageSection() {return cy.get('class$="__BrokerageAttribution"]')}
+  brokerageSection() {return cy.get('class$=__BrokerageAttribution]')}
   yourHomeSection() {return cy.getBySel("ho-dashboard-section-your_home")}
   yourNeighborhoodSection() {return cy.getBySel("ho-dashboard-section-your_neighborhood")}
   toolsAndInsightsSection() {return cy.getBySel("ho-dashboard-section-tools_and_insights")}

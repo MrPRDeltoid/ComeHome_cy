@@ -19,6 +19,11 @@ beforeEach(() => {
 
 describe('The Home Page', () => {
   // Basic tests for logged out user on the Home Page
+  it('Has correct title and url', () => {
+    cy.url().should('equal', Cypress.config('baseUrl'))
+    cy.title().should('eq', home_page.TITLE)
+  })
+
   it('Has correct sections', () => {
     home_page.mainHeader().should('exist')
     home_page.topSection().should('exist')
@@ -27,11 +32,6 @@ describe('The Home Page', () => {
     home_page.trackOrBuyHomeSection().should('exist')
     home_page.yourTeamAgentSection().should('exist')
     home_page.footerSection().should('exist')
-  })
-
-  it('Has correct title and url', () => {
-    cy.url().should('equal', Cypress.config('baseUrl'))
-    cy.title().should('eq', home_page.TITLE)
   })
 })
 
@@ -92,6 +92,13 @@ describe('The My Home search view', () => {
     owner_view.avmSectionAddress().find('h1').should('have.text', property_data['street'])
     owner_view.avmSectionDetails().should('have.text', `${property_data['beds']} Bed|${property_data['baths']} Bath|${property_data['gla'].replace(',', '')} Sq Ft.`)
     })
+})
+
+describe('The Photo Section', () => {
+  it('Shows correct number of columns and photos', () => {
+    home_page.photoColumn().should('have.length', 4)
+    home_page.photos().should('have.length', 10)
+  })
 })
 
 describe('The Track or Buy Home section', () => {

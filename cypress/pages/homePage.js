@@ -5,21 +5,21 @@ export class HomePage extends BasePage {
   TITLE = "Home | ComeHome"
 
   // Main page sections
-  topSection() {return cy.get('[class$="__TopSection"]')}
-  photoSection() {return cy.get('[class$="__PhotoSection"]')}
-  trackOrBuyHomeSection() {return cy.get('[class$="__HomeSubpageTrackOrBuyHome"]')}
-  yourTeamAgentSection() {return cy.get('[class$="__HomeSubpageYourTeamAgent"]')}
+  topSection() {return cy.get('[class$=__TopSection]')}
+  photoSection() {return cy.get('[class$=__PhotoSection]')}
+  trackOrBuyHomeSection() {return cy.get('[class$=__HomeSubpageTrackOrBuyHome]')}
+  yourTeamAgentSection() {return cy.get('[class$=__HomeSubpageYourTeamAgent]')}
   // Page headers
   header() {return cy.get('h1')}
   subheader() {return cy.get('[class$="__SubHeader"]')}
   // Property search
   findHomeButton() {return cy.getBySel("find-a-home")}
   trackHomeButton() {return cy.getBySel("track-my-home")}
-  searchField() {return cy.get('[name^="comehome-address-search-"]')}
-  searchButton() {return cy.get('button[class$="HomeSubpageSearch__SearchButton"]')}
+  searchField() {return cy.get('[name^=comehome-address-search-]')}
+  searchButton() {return cy.get('button[class$=HomeSubpageSearch__SearchButton]')}
   // Photo section
-  photoColumn() {return cy.get('class$="__PhotoColumn"]')}
-  photos() {return cy.get('[class$="__PhotoColumnPhoto"]')}
+  photoColumn() {return cy.get('[class$=__PhotoColumn]')}
+  photos() {return cy.get('[class$=__PhotoColumnPhoto]')}
   // Track or buy home section
   buyHomeTitle() {return cy.getBySel("buy-home-modal-header")}
   buyHomeDescription() {return cy.getBySel("buy-home-modal-description")}
