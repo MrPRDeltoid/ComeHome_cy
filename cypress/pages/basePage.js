@@ -46,11 +46,32 @@ export class JoinLoginDialog {
   emailField() {return cy.get('[name="email"]')}
   phoneField() {return cy.get('[name="phone"]')}
   passwordField() {return cy.get('[name="password"]')}
+  errorMessage() {return cy.getBySel("error-message")}
   confirmRow() {return cy.getBySel("confirm-row")}
-  signupButton() {return cy.getBySel("signup-button")}
+  confirmCheck() {return cy.get('input[type="checkbox"]')}
+  signupButton() {return cy.get('button[aria-label="Sign Up"]')}
   loginButton() {return cy.get('button[aria-label="log in"]')}
   
   // Methods
+  fillJoinLoginDialogFields(first_name, last_name, email, phone, password, check=true) {
+    if (this.subTitle().should('have.text', "Please sign up for a ComeHome account.")) {
+      this.firstNameField().type(first_name)
+      this.lastNameField().type(last_name)
+      if (phone != undefined) {  // NOTE: Workaround,. since cypress does not allow typing enpty stings('')
+        this.phoneField().type(phone)
+      }
+      if (check) {
+        this.confirmCheck().check()
+      }
+    if (email != undefined) {
+      this.emailField().type(email)
+    }
+    if (password != undefined) {
+      this.passwordField().type(password)
+    }
+    }
+  }
+
   closeDialog() {
     this.closeButton().click()
     cy.wait(500)
