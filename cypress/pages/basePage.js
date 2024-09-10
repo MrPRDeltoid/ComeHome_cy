@@ -53,24 +53,19 @@ export class JoinLoginDialog {
   loginButton() {return cy.get('button[aria-label="log in"]')}
   
   // Methods
-  fillJoinLoginDialogFields(first_name, last_name, email, phone, password, check=true) {
+  fillJoinLoginDialogFields(first_name='\u00a0', last_name='\u00a0', email='\u00a0', phone='\u00a0', password='\u00a0', check=true) {
+    // NOTE: Using unicode, as cypress does not allow blank entries('')
     this.subTitle().invoke('text').then((dialog_header) => {
       if (dialog_header === "Please sign up for a ComeHome account.") {
         this.firstNameField().type(first_name)
         this.lastNameField().type(last_name)
-        if (phone != undefined) {  // NOTE: Workaround, cypress does not allow typing enpty strings('')
-          this.phoneField().type(phone)
-        }
+        this.phoneField().type(phone)
         if (check) {
           this.confirmCheck().check()
         }
       }
-      if (email != undefined) {
-        this.emailField().type(email)
-      }
-      if (password != undefined) {
-        this.passwordField().type(password)
-      }
+      this.emailField().type(email)
+      this.passwordField().type(password)
     })
   }
 
