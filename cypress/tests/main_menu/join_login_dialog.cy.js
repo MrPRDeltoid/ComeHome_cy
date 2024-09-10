@@ -94,7 +94,7 @@ describe('The Signup/Login Dialog', () => {
     join_login_dialog.signupButton().should('be.enabled')
   })
 
-  it.only('Shows correct messages for valid email/invalid password on signup form', () => {
+  it('Shows correct messages for valid email/invalid password on signup form', () => {
     // Enter required valid field info, with valid email/invalid password to verify correct error messages
     const index = 4
     join_login_dialog.fillJoinLoginDialogFields('First', 'Last', 'valid_email@gmail.com', undefined, undefined, undefined)
@@ -107,5 +107,36 @@ describe('The Signup/Login Dialog', () => {
     join_login_dialog.firstNameField().focus()
     join_login_dialog.errorMessage().eq(index).should('not.be.visible')
     join_login_dialog.signupButton().should('be.enabled')
+  })
+
+  it('Shows correct messages for invalid email/valid password on login form', () => {
+    // Enter valid password with invalid email to verify correct error messages
+    const index = 0
+    join_login_dialog.loginLink().click()
+    join_login_dialog.fillJoinLoginDialogFields(undefined, undefined, undefined, undefined, 'Password123', undefined)
+    join_login_dialog.emailField().type('invalid_email')
+    join_login_dialog.passwordField().focus()  // NOTE: Cypress unable to press TAB
+    join_login_dialog.errorMessage().eq(index).should('be.visible').and('have.text', 'Invalid email')
+    join_login_dialog.emailField().type('invalid_email@gmail')
+    join_login_dialog.passwordField().focus()
+    join_login_dialog.errorMessage().eq(index).should('be.visible').and('have.text', 'Invalid email')
+    join_login_dialog.emailField().type('invalid_email@gmail.com')
+    join_login_dialog.passwordField().focus()
+    join_login_dialog.errorMessage().eq(index).should('not.be.visible')
+    join_login_dialog.loginButton().should('be.enabled')
+  })
+
+  it('Shows correct messages for valid email/invalid password on login form', () => {
+    // Enter valid email with invalid password to verify correct error messages
+    const index = 1
+    join_login_dialog.loginLink().click()
+    join_login_dialog.fillJoinLoginDialogFields(undefined, undefined, 'valid_email@gmail.com', undefined, undefined, undefined)
+    join_login_dialog.passwordField().type('1234')
+    join_login_dialog.emailField().focus()  // NOTE: Cypress unable to press TAB
+    join_login_dialog.errorMessage().eq(index).should('be.visible').and('have.text', 'Password must be at least 8 characters')
+    join_login_dialog.passwordField().type('12345678')
+    join_login_dialog.emailField().focus()
+    join_login_dialog.errorMessage().eq(index).should('not.be.visible')
+    join_login_dialog.loginButton().should('be.enabled')
   })
 })

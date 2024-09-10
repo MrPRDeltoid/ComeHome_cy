@@ -54,22 +54,24 @@ export class JoinLoginDialog {
   
   // Methods
   fillJoinLoginDialogFields(first_name, last_name, email, phone, password, check=true) {
-    if (this.subTitle().should('have.text', "Please sign up for a ComeHome account.")) {
-      this.firstNameField().type(first_name)
-      this.lastNameField().type(last_name)
-      if (phone != undefined) {  // NOTE: Workaround,. since cypress does not allow typing enpty stings('')
-        this.phoneField().type(phone)
+    this.subTitle().invoke('text').then((dialog_header) => {
+      if (dialog_header === "Please sign up for a ComeHome account.") {
+        this.firstNameField().type(first_name)
+        this.lastNameField().type(last_name)
+        if (phone != undefined) {  // NOTE: Workaround, cypress does not allow typing enpty strings('')
+          this.phoneField().type(phone)
+        }
+        if (check) {
+          this.confirmCheck().check()
+        }
       }
-      if (check) {
-        this.confirmCheck().check()
+      if (email != undefined) {
+        this.emailField().type(email)
       }
-    if (email != undefined) {
-      this.emailField().type(email)
-    }
-    if (password != undefined) {
-      this.passwordField().type(password)
-    }
-    }
+      if (password != undefined) {
+        this.passwordField().type(password)
+      }
+    })
   }
 
   closeDialog() {
