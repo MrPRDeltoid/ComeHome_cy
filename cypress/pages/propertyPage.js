@@ -12,6 +12,8 @@ export class PropertyPage extends BasePage {
 }
 
 export class PublicView extends PropertyPage {
+  URL = `${Cypress.config('baseUrl')}property-details`
+
   // Elements and methods specific to public view
   photoSection() {return cy.getBySel("carousel-section")}
   introSection() {return cy.getBySel("property-intro-section")}
@@ -21,8 +23,13 @@ export class PublicView extends PropertyPage {
   summaryOptionsPanel() {return cy.getBySel("summary-options-panel")}
   upsellSection() {return cy.getBySel("upsell-section")}
   mapViewSection() {return cy.get('section[class^=MapPropertyPage__MapPropertyPage]')}
+  avmBreakdownSection() {return cy.getBySel("avm-breakdown")}
+  avmBreakoutSection() {return cy.getBySel("avm-breakout-section")}
   
   //Methods
+  goto(slug) {
+    cy.visit(`${this.URL}/${slug}`)
+  }
 
 }
 

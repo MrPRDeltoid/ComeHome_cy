@@ -5,6 +5,18 @@ export class BasePage {
   mainHeader() {return cy.getBySel("top-section")}
   brokerageSection() {return cy.get(".BrokerageAttribution__BrokerageAttribution")}
   footerSection() {return cy.getBySel("footer-section")}
+
+  // Methods
+  constructFullAddress(data) {
+    const full_address = `${data['street']} ${data['city']} ${data['state']} ${data['zip']}`
+    return full_address
+  }
+
+  constructSlug(data) {
+    const full_address = this.constructFullAddress(data)
+    const slug = full_address.replaceAll(' ', '-')
+    return slug
+  }
 }
 
 export class MainHeader {
