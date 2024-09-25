@@ -31,6 +31,13 @@ export class PublicView extends PropertyPage {
     cy.visit(`${this.URL}/${slug}`)
   }
 
+  loadPropertyPage(property) {
+    const property_data = require('../data/properties.json')[property]
+    const slug = this.constructSlug(property_data)
+    this.goto(slug)
+    cy.wrap(slug).as('slug')
+    cy.fixture('../data/properties.json').as('property_data')
+  }
 }
 
 export class OwnerView extends PropertyPage{

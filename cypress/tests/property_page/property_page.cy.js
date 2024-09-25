@@ -1,4 +1,4 @@
-import { PublicView, OwnerView } from "../pages/propertyPage"
+import { PublicView } from "../../pages/propertyPage"
 
 
 const public_view = new PublicView
@@ -6,11 +6,7 @@ const property = 'property1'
 
 beforeEach(() => {
   // Load the Property Page for the given property data
-  const property_data = require('../data/properties.json')[property]
-  const slug = public_view.constructSlug(property_data)
-  public_view.goto(slug)
-  cy.wrap(slug).as('slug')
-  cy.fixture('../data/properties.json').as('property_data')
+  public_view.loadPropertyPage(property)
 })
 
 describe('The Property Page', () => {
