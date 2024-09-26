@@ -11,6 +11,10 @@ export class HomeownerPage extends BasePage {
   loginRow() {return cy.getBySel("my-home-login")}
   bottomText() {return cy.get('[class$=__CHOHomePageHeroBottomText]')}
   infoCard() {return cy.get('[class$=__CHOHomePageCard]')}
+  // When address is specified
+  avmSection() {return cy.getBySel("avm-section")}
+  avmSectionAddress() {return cy.getBySel("avm-address")}
+  avmSectionDetails() {return cy.getBySel("avm-property-details")}
 
   // Methods
   goto() {

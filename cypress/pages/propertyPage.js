@@ -22,6 +22,7 @@ export class PublicView extends PropertyPage {
   propertyDetailsSection() {return cy.get('[class$=__AdditionalHomeDetails]')}
   summaryOptionsPanel() {return cy.getBySel("summary-options-panel")}
   upsellSection() {return cy.getBySel("upsell-section")}
+  upsellSectionClaimHomeButton() {return cy.get('[data-event-name=click_property_details_owner_promo]')}
   mapViewSection() {return cy.get('section[class^=MapPropertyPage__MapPropertyPage]')}
   avmBreakdownSection() {return cy.getBySel("avm-breakdown")}
   avmBreakoutSection() {return cy.getBySel("avm-breakout-section")}
