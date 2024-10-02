@@ -20,6 +20,10 @@ export class PublicView extends PropertyPage {
   introSectionAddress() {return cy.get('.PropertyIntro__Address')}
   introSectionDetails() {return cy.getBySel("property-info")}
   propertyDetailsSection() {return cy.get('[class$=__AdditionalHomeDetails]')}
+  propertyDetailsTable() {return this.propertyDetailsSection().find('table')}
+  propertyDetailsCaption() {return this.propertyDetailsSection().find('caption')}
+  propertyDetailsRow() {return this.propertyDetailsTable().find('tr')}
+  propertyDetailsAttribution() {return this.propertyDetailsSection().find('.AdditionalHomeDetails__Legal')}
   summaryOptionsPanel() {return cy.getBySel("summary-options-panel")}
   upsellSection() {return cy.getBySel("upsell-section")}
   upsellSectionClaimHomeButton() {return cy.get('[data-event-name=click_property_details_owner_promo]')}
