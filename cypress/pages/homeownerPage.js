@@ -18,6 +18,6 @@ export class HomeownerPage extends BasePage {
 
   // Methods
   goto() {
-    cy.visit("/homeowner")
+    cy.visit(this.URL)
   }
 }

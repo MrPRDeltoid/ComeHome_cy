@@ -20,6 +20,6 @@ export class AlertsPage extends BasePage {
 
   // Methods
   goto() {
-    cy.visit("/alerts")
+    cy.visit(this.URL)
   }
 }

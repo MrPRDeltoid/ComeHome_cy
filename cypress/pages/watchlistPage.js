@@ -21,6 +21,6 @@ export class WatchlistPage extends BasePage {
 
   // Methods
   goto() {
-    cy.visit("/watchlist")
+    cy.visit(this.URL)
   }
 }

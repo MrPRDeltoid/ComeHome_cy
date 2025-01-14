@@ -18,6 +18,6 @@ export class AgentPage extends BasePage {
 
   // Methods
   goto() {
-    cy.visit("/concierge-team")
+    cy.visit(this.URL)
   }
 }

@@ -11,6 +11,6 @@ export class SearchPage extends BasePage {
 
   // Methods
   goto() {
-    cy.visit("/search")
+    cy.visit(this.URL)
   }
 }
