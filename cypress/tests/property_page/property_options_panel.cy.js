@@ -31,8 +31,9 @@ describe('The Options Panel', () => {
     // Click to hide mortgage info
     public_view.listingStatusMortgageInfoButton().click()
     public_view.mortgageInfo().should('not.exist')
-    public_view.getPreApprovedButton().should('have.text', "Get pre-approved").and('be.enabled')
     public_view.contactAgentButton().should('have.text', "Contact Agent").and('be.enabled')
+    public_view.requestTourButtonButton().should('be.enabled').and('have.attr', 'aria-label', "Request tour")
+    public_view.requestTourButtonLabel().should('have.text', "Request tour")
     public_view.shareButtonButton().should('be.enabled').and('have.attr', 'aria-label', "share")
     public_view.shareButtonLabel().should('have.text', "Share")
     public_view.saveButtonButton().should('be.enabled').and('have.attr', 'aria-label', "Save this property to your Watchlist")

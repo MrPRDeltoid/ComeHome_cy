@@ -36,9 +36,11 @@ export class PublicView extends PropertyPage {
   mortgageInfo() {return this.summaryOptionsPanel().find('.PDPRightRailCard__MortgageInfo')}
   mortgageInfoLabel() {return this.mortgageInfo().find('[class$=__Label]')}
   mortgageInfoValue() {return this.mortgageInfo().find('[class$=__Value]')}
-  getPreApprovedButton() {return this.summaryOptionsPanel().find('[data-event-name=click_lender_cta]')}
   contactAgentButton() {return cy.getBySel("contact-agent-button")}
   // TODO: Cannot chain mulitple find methods? So following Share/Save button needs top selector defined to get both button and label elements using find
+  requestTourButton() {return cy.get('.RequestATourButton__RequestATourButton')}
+  requestTourButtonButton() {return this.requestTourButton().find('button')}
+  requestTourButtonLabel() {return this.requestTourButton().find('.RequestATourButton__ButtonLabel')}
   shareButton() {return cy.getBySel("share-button")}
   shareButtonButton() {return this.shareButton().find('button')}
   shareButtonLabel() {return this.shareButton().find('label')}
